@@ -1,0 +1,31 @@
+<h4>{{foundQuestion.question}}</h4>
+<p>Click the Vote button to choose one</p>
+<fieldset>
+  <table>
+    <tr>
+      <th>Option</th>
+      <th>Current Count of Votes</th>
+      <th>Action</th>
+    </tr>
+    <tr>
+      <td>{{foundQuestion.option1}}</td>
+      <td>{{foundQuestion.option1Likes}}</td>
+      <button (click)="like1()">Vote</button>
+    </tr>
+    <tr>
+      <td>{{foundQuestion.option2}}</td>
+      <td>{{foundQuestion.option2Likes}}</td>
+      <button (click)="like2()">Vote</button>
+    </tr>
+    <tr>
+      <td>{{foundQuestion.option3}}</td>
+      <td>{{foundQuestion.option3Likes}}</td>
+      <button (click)="like3()">Vote</button>
+    </tr>
+    <tr>
+      <td>{{foundQuestion.option4}}</td>
+      <td>{{foundQuestion.option4Likes}}</td>
+      <button (click)="like4()">Vote</button>
+    </tr>
+  </table>
+</fieldset>
