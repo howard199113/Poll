@@ -65,7 +65,7 @@ shownQuestions: any[];
     console.log("hit searchScore", this.searchString);
     this.shownQuestions = this.allQuestions.filter((question)=>{
       console.log(question.question.includes(this.searchString));
-      return question.question.toLowerCase().includes(this.searchString);
+      return question.question.toLowerCase().includes(this.searchString) || question._user.name.toLowerCase().includes(this.searchString);
 
       // score.score.toString().includes(this.searchString);
     })

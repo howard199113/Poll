@@ -11,10 +11,11 @@
       <th>Action</th>
     </tr>
     <tr *ngFor="let question of shownQuestions">
-      <td>{{question._user}}</td>
+      <td>{{question._user.name}}</td>
       <a [routerLink]="['poll', question._id]">{{question.question}}</a>
       <td>{{question.createdAt | date:'longDate'}}</td>
-      <button *ngIf="question._user ==  currentUser._id" (click)="delete(question._id)">Delete</button>
+
+      <button *ngIf="question._user._id == currentUser._id" (click)="delete(question._id)">Delete</button>
     </tr>
   </table>
 </fieldset>

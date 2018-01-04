@@ -59,7 +59,7 @@ module.exports ={
 
   getAllQuestions: (req,res)=>{
     console.log('hit getAllQuestions');
-    Question.find().exec((err, foundQuestions)=>{
+    Question.find().populate('_user').exec((err, foundQuestions)=>{
       if(err){
         console.log('something went wrong');
         res.json(err);

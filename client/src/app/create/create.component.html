@@ -1,9 +1,15 @@
 <h3>Put the question and options here:</h3>
 <form (submit)="onSubmit()" #createForm="ngForm">
   <p>Question: <input type="text" name="question" [(ngModel)]="newQuestion.question" #question="ngModel" required minlength=8></p>
+  <p *ngIf="question.invalid && question.dirty">At least 8 characters for question</p>
   <p>Option 1: <input type="text" name="option1" [(ngModel)]="newQuestion.option1" #option1="ngModel" required minlength=4></p>
+  <p *ngIf="option1.invalid && option1.dirty">At least 4 characters for options</p>
   <p>Option 2: <input type="text" name="option2" [(ngModel)]="newQuestion.option2" #option2="ngModel" required minlength=4></p>
+  <p *ngIf="option2.invalid && option2.dirty">At least 4 characters for options</p>
   <p>Option 3: <input type="text" name="option3" [(ngModel)]="newQuestion.option3" #option3="ngModel" required minlength=4></p>
+  <p *ngIf="option3.invalid && option3.dirty">At least 4 characters for options</p>
   <p>Option 4: <input type="text" name="option4" [(ngModel)]="newQuestion.option4" #option4="ngModel" required minlength=4></p>
+  <p *ngIf="option4.invalid && option4.dirty">At least 4 characters for options</p>
   <input type="submit" value="Create Poll" [disabled]="createForm.invalid">
+  <a href="home">Cancel</a>
 </form>
